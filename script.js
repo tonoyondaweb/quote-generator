@@ -4,7 +4,7 @@ const authorText = document.getElementById('author');
 const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
 const loader = document.getElementById('loader');
-
+const darkbtn = document.getElementById('dark');
 // Show loader
 function showLoadSpinner(){
   loader.hidden = false;
@@ -54,9 +54,16 @@ function tweetQuote(){
   window.open(twitterUrl, '_blank');
 }
 
+//Dark mode
+function darkMode(){
+  const bod = document.body;
+  bod.classList.toggle('dark-mode');
+  quoteContainer.classList.toggle('quote-container-dark');
+}
+
 newQuoteBtn.addEventListener('click',getQuote);
 twitterBtn.addEventListener('click',tweetQuote);
+darkbtn.addEventListener('click',darkMode);
 
 //On load
 getQuote();
-
